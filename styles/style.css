@@ -48,7 +48,7 @@ h6 {
 
    .nav-links-container {
 
-      @media only screen and (max-width: 425px) {
+      @media only screen and (max-width: 768px) {
          display: none;
       }
 
@@ -62,7 +62,7 @@ h6 {
    }
 
    .nav-btn {
-      @media only screen and (max-width: 425px) {
+      @media only screen and (max-width: 768px) {
          display: none;
       }
 
@@ -76,7 +76,7 @@ h6 {
    .hamburger-label {
       display: none;
 
-      @media only screen and (max-width: 425px) {
+      @media only screen and (max-width: 768px) {
          display: block;
       }
 
@@ -152,8 +152,6 @@ h6 {
 
    }
 }
-
-
 
 /* main feature section */
 .feature-cards-container {
@@ -248,9 +246,15 @@ h6 {
       align-items: center;
       margin-top: 3rem;
 
+      @media only screen and (max-width: 425px) {
+         flex-direction: column;
+      }
+
       .features-container {
+         flex: 1;
+
          .feature-card {
-            padding: 2rem;
+            padding: clamp(1rem, 1.5vw, 2rem);
             position: relative;
 
             &::before {
@@ -280,6 +284,14 @@ h6 {
                font-size: 1.25rem;
             }
          }
+      }
+
+      .feature-image {
+         img {
+            width: 100%;
+         }
+
+         flex: 1;
       }
    }
 }
