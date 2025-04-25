@@ -297,7 +297,26 @@ h6 {
 }
 
 
+/* Testimonials Section */
+.testimonial-section {
+   background-color: var(--section-bg);
 
+   .reviews-wrapper {
+      margin-top: 3rem;
+      column-count: 3;
+
+      .review-container {
+         border: 1px solid #E2E8F0;
+         padding: 1.5rem;
+         border-radius: 1.5rem;
+         -webkit-border-radius: 1.5rem;
+         -moz-border-radius: 1.5rem;
+         -ms-border-radius: 1.5rem;
+         -o-border-radius: 1.5rem;
+         break-inside: avoid;
+      }
+   }
+}
 
 
 
