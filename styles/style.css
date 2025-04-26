@@ -301,9 +301,17 @@ h6 {
 .testimonial-section {
    background-color: var(--section-bg);
 
-   .reviews-wrapper {
+   #reviews-wrapper {
       margin-top: 3rem;
       column-count: 3;
+
+      @media only screen and (max-width: 768px) {
+         column-count: 2;
+      }
+
+      @media only screen and (max-width: 425px) {
+         column-count: 1;
+      }
 
       .review-container {
          border: 1px solid #E2E8F0;
@@ -314,6 +322,80 @@ h6 {
          -ms-border-radius: 1.5rem;
          -o-border-radius: 1.5rem;
          break-inside: avoid;
+
+         &:not(:last-child) {
+            margin-bottom: 1rem;
+         }
+
+         .user-ratings {
+            display: inline-block;
+            color: rgb(250, 176, 5);
+            margin-bottom: 1rem;
+         }
+
+         .review {
+            font-size: 1.125rem;
+         }
+
+         .profile {
+            justify-content: flex-start;
+            margin-top: 1rem;
+            gap: 1rem;
+
+            img {
+               width: 50px;
+               aspect-ratio: 1/1;
+               border-radius: 50%;
+               -webkit-border-radius: 50%;
+               -moz-border-radius: 50%;
+               -ms-border-radius: 50%;
+               -o-border-radius: 50%;
+               object-fit: cover;
+            }
+
+         }
+      }
+   }
+}
+
+.contact-section {
+   .heading-tag {
+      margin-left: 0;
+   }
+
+   .section-description,
+   .section-heading {
+      text-align: left;
+      margin-left: 0;
+   }
+
+   .contact-wrapper {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      @media only screen and (max-width: 768px) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media only screen and (max-width: 425px) {
+         grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+         border: 1px solid #E2E8F0;
+         padding: 1.5rem;
+         border-radius: 1.5rem;
+         -webkit-border-radius: 1.5rem;
+         -moz-border-radius: 1.5rem;
+         -ms-border-radius: 1.5rem;
+         -o-border-radius: 1.5rem;
+
+         img,
+         h4 {
+            margin-bottom: 0.5rem;
+         }
       }
    }
 }
