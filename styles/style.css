@@ -434,11 +434,19 @@ h6 {
             gap: 1rem;
             margin-top: 2rem;
 
+            @media only screen and (max-width: 425px) {
+               flex-direction: column;
+            }
+
             button {
                font-weight: 700;
 
                &.btn-outline {
                   color: rgb(var(--primary));
+               }
+
+               @media only screen and (max-width: 425px) {
+                  text-align: center;
                }
             }
          }
