@@ -358,6 +358,7 @@ h6 {
    }
 }
 
+
 .contact-section {
    .heading-tag {
       margin-left: 0;
@@ -400,6 +401,99 @@ h6 {
    }
 }
 
+/* CTA Section */
+.cta-section {
+   background-color: #EEF2FF;
+   padding: 0 !important;
+   position: relative;
+   overflow: hidden;
+
+   &>div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+
+      @media only screen and (max-width: 768px) {
+         grid-template-columns: 1fr;
+         padding: 3rem 0 5rem 0;
+      }
+
+      .content {
+
+         * {
+            text-align: left;
+            margin: 0;
+         }
+
+         .section-description {
+            font-weight: 500;
+         }
+
+         .btns {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+
+            button {
+               font-weight: 700;
+
+               &.btn-outline {
+                  color: rgb(var(--primary));
+               }
+            }
+         }
+      }
+
+      .images {
+         position: relative;
+         display: flex;
+         justify-content: space-between;
+
+         @media only screen and (max-width: 768px) {
+            margin-top: 2rem;
+         }
+
+         img {
+            max-width: 100%;
+            position: relative;
+
+            @media only screen and (max-width: 425px) {
+               max-width: 50%;
+            }
+
+            &:first-child {
+               bottom: -10rem;
+               left: 0;
+
+               @media only screen and (max-width: 768px) {
+                  position: static;
+                  transform: translateY(5rem);
+                  -webkit-transform: translateY(5rem);
+                  -moz-transform: translateY(5rem);
+                  -ms-transform: translateY(5rem);
+                  -o-transform: translateY(5rem);
+               }
+            }
+
+            &:last-child {
+               top: -8rem;
+               right: 1rem;
+
+               @media only screen and (max-width: 1024px) {
+                  right: 10rem;
+               }
+
+               @media only screen and (max-width: 768px) {
+                  position: static;
+               }
+            }
+         }
+
+      }
+   }
+
+
+}
 
 
 
