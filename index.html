@@ -37,10 +37,25 @@
          </div>
 
          <!-- hamburger for mobile devices -->
-         <label for="hamburger" class="hamburger-label">
+         <label id="hamburger">
             <img src="./assets/hamburger.png" alt="hamburger">
          </label>
-         <input type="checkbox" name="hamburger" id="hamburger">
+
+         <!-- mobile nav container -->
+         <div class="mobile-nav-container">
+            <ul class="links">
+               <li><a href="#">Features</a></li>
+               <li><a href="#">Achievements</a></li>
+               <li><a href="#">Testimonials</a></li>
+               <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="middle mobile-nav-btns">
+               <button class="btn btn-outline">Sign Up</button>
+               <button class="btn">Log In</button>
+            </div>
+
+            <i class="fa-solid fa-xmark" id="cross-icon"></i>
+         </div>
 
       </nav>
 

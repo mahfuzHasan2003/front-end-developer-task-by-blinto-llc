@@ -15,6 +15,10 @@
    box-sizing: border-box;
 }
 
+html[data-lock-scroll="true"] {
+   overflow: hidden;
+}
+
 body {
    font-family: "Plus Jakarta Sans", sans-serif;
    color: rgb(var(--text-body));
@@ -28,7 +32,6 @@ h5,
 h6 {
    color: rgb(var(--text-heading));
 }
-
 
 
 /* Nav-bar */
@@ -69,11 +72,7 @@ h6 {
       gap: 0.75rem;
    }
 
-   input {
-      display: none;
-   }
-
-   .hamburger-label {
+   #hamburger {
       display: none;
 
       @media only screen and (max-width: 768px) {
@@ -83,6 +82,45 @@ h6 {
       img {
          max-height: 2.5rem;
          cursor: pointer;
+      }
+   }
+
+   .mobile-nav-container {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 5rem 0 2rem 0;
+      text-align: center;
+      background-color: #fff;
+      backdrop-filter: blur(20px);
+      border-top: 2px solid #ccc;
+
+      #cross-icon {
+         position: absolute;
+         top: -2.5rem;
+         font-size: 4rem;
+         color: brown;
+         right: 20px;
+         top: 10px;
+         cursor: pointer;
+      }
+
+      .links {
+         list-style-type: none;
+         display: grid;
+         gap: 1rem;
+
+         a {
+            text-decoration: none;
+            font-size: 1.5rem;
+         }
+      }
+
+      .mobile-nav-btns {
+         gap: 1rem;
+         margin-top: 2rem;
       }
    }
 }
