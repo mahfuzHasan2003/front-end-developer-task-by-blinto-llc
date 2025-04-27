@@ -83,6 +83,11 @@ h6 {
       a {
          display: inline-block;
          padding: 0.25rem 0.5rem;
+
+         &:hover {
+            text-decoration: underline;
+            color: rgb(var(--primary))
+         }
       }
    }
 
@@ -441,6 +446,19 @@ h6 {
             }
 
          }
+      }
+   }
+
+   #load-more-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+      justify-content: center;
+      margin-top: 2rem;
+
+      @media (width > 425px) {
+         display: none;
       }
    }
 }

@@ -68,23 +68,36 @@ const users = [
 /* ------------------------- Testimonial Section ------------------------- */
 // Adding reviews to the page dynamically
 const reviewWrapper = document.getElementById("reviews-wrapper");
-users.forEach((user) => {
-   const reviewContainer = `
-   <div class="review-container">
-      <span class="user-ratings">
-      ${"<i class='fa-solid fa-star'></i>".repeat(Math.floor(user.rating)) + "<i class='fa-regular fa-star-half-stroke'></i>".repeat(Math.ceil(user.rating % 1)) + "<i class='fa-regular fa-star'></i>".repeat(5 - Math.ceil(user.rating))}
-      </span>
-      <p class="review">${user.review}</p>
-      <div class="profile middle">
-         <img src=${user.profile_pic} alt=${user.name}>
-         <div>
-            <h4>${user.name}</h4>
-            <p>${user.designation}</p>
+const testimonialSection = document.getElementById("testimonial-section");
+const renderReviews = () => {
+   reviewWrapper.innerHTML = "";
+   const isMobile = window.innerWidth <= 425;
+   const visibleUsers = isMobile ? users.slice(0, 4) : users;
+   visibleUsers.forEach((user) => {
+      const reviewContainer = `
+      <div class="review-container">
+         <span class="user-ratings">
+         ${"<i class='fa-solid fa-star'></i>".repeat(Math.floor(user.rating)) + "<i class='fa-regular fa-star-half-stroke'></i>".repeat(Math.ceil(user.rating % 1)) + "<i class='fa-regular fa-star'></i>".repeat(5 - Math.ceil(user.rating))}
+         </span>
+         <p class="review">${user.review}</p>
+         <div class="profile middle">
+            <img src=${user.profile_pic} alt=${user.name}>
+            <div>
+               <h4>${user.name}</h4>
+               <p>${user.designation}</p>
+            </div>
          </div>
-      </div>
-   </div>`;
-   reviewWrapper.innerHTML += reviewContainer;
-});
+      </div>`;
+      reviewWrapper.innerHTML += reviewContainer;
+   });
+
+}
+renderReviews(); // Initial render
+// re-render reviews on window resize
+window.addEventListener('resize', renderReviews);
+
+
+
 
 
 
@@ -107,9 +120,9 @@ navBarToggle.addEventListener("click", () => {
 
 // removing nav bar on clicking nav links or close button
 navElementsOnMobile.forEach((element) => {
-   element.addEventListener("click", () => removeActive());
+   element.addEventListener("click", removeActive);
 });
-navBarClose.addEventListener("click", () => removeActive());
+navBarClose.addEventListener("click", removeActive);
 
 
 
