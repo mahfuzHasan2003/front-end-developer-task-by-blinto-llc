@@ -110,3 +110,22 @@ navElementsOnMobile.forEach((element) => {
    element.addEventListener("click", () => removeActive());
 });
 navBarClose.addEventListener("click", () => removeActive());
+
+
+
+/* ------------------------- SCROLL TO TOP ------------------------- */
+const scrollToTopBtn = document.getElementById("scroll-to-top");
+// Adding event listener to show/hide the button
+window.addEventListener("scroll", () => {
+   if (window.scrollY > window.innerHeight * 1.3) {
+      scrollToTopBtn.style.display = 'grid';
+   } else {
+      scrollToTopBtn.style.display = 'none';
+   }
+})
+// Adding event listener to scroll to top
+scrollToTopBtn.addEventListener('click', () => {
+   window.scrollTo({
+      top: 0, behavior: 'smooth'
+   });
+});

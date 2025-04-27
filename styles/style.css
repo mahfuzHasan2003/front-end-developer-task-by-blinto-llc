@@ -1,3 +1,4 @@
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
@@ -32,6 +33,26 @@ h4,
 h5,
 h6 {
    color: rgb(var(--text-heading));
+}
+
+#scroll-to-top {
+   position: fixed;
+   bottom: 2rem;
+   right: 2rem;
+   z-index: 5;
+   background-color: rgb(var(--primary));
+   color: var(--section-bg);
+   min-height: 3rem;
+   display: grid;
+   place-items: center;
+   aspect-ratio: 1/1;
+   border-radius: 50%;
+   cursor: pointer;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+   display: none;
 }
 
 
@@ -76,14 +97,13 @@ h6 {
    #hamburger {
       display: none;
 
+      max-height: 2.5rem;
+      cursor: pointer;
+
       @media only screen and (max-width: 768px) {
          display: block;
       }
 
-      img {
-         max-height: 2.5rem;
-         cursor: pointer;
-      }
    }
 
    #mobile-nav-container {
@@ -94,7 +114,6 @@ h6 {
       padding: 5rem 0 2rem 0;
       text-align: center;
       backdrop-filter: blur(20px);
-      border-top: 2px solid #ccc;
       transition: all 0.5s ease;
       opacity: 0;
       transform: translateY(110%);
@@ -151,11 +170,10 @@ h6 {
       .mobile-nav-btns {
          gap: 1rem;
          margin-top: 2rem;
+         flex-wrap: wrap;
       }
    }
 }
-
-
 
 /* hero section */
 .hero-section {
@@ -258,7 +276,7 @@ h6 {
    .data-container {
       display: table;
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 2rem;
 
       @media only screen and (max-width: 425px) {
          display: block;
@@ -279,6 +297,7 @@ h6 {
             border-right: 1px solid #ccc;
 
             @media only screen and (max-width: 425px) {
+               border-right: none;
                border-bottom: 1px solid #ccc;
             }
 
@@ -364,7 +383,6 @@ h6 {
       }
    }
 }
-
 
 /* Testimonials Section */
 .testimonial-section {
@@ -548,7 +566,8 @@ h6 {
 /* CTA Section */
 .cta-section {
    background-color: #EEF2FF;
-   padding: 0 !important;
+   padding-top: 0 !important;
+   padding-bottom: 0 !important;
    position: relative;
    overflow: hidden;
 
@@ -657,9 +676,13 @@ h6 {
 
    .footer-links {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 3rem;
+
+      @media (width >=1024px) {
+         justify-content: space-between;
+
+      }
 
       .links-container {
          display: grid;
@@ -720,6 +743,7 @@ h6 {
 .btn {
    padding: 0.75rem 2rem;
    background-color: rgb(var(--primary));
+   font-weight: 700;
    border: 2px solid transparent;
    border-radius: 10rem;
    -webkit-border-radius: 10rem;
@@ -728,12 +752,20 @@ h6 {
    -o-border-radius: 10rem;
    color: #fff;
    cursor: pointer;
+
+   &:not(.btn-outline):hover {
+      background-color: rgba(var(--primary), 0.9);
+   }
 }
 
 .btn-outline {
    border: 2px solid rgb(var(--primary));
    background-color: transparent;
    color: #000;
+
+   &:hover {
+      background-color: rgba(var(--primary), 0.1);
+   }
 }
 
 /* heading tag */
@@ -755,7 +787,7 @@ h6 {
 
 /* for all section */
 .section {
-   padding: 5rem 0;
+   padding: 5rem 1rem;
 
    .section-heading {
       font-size: 2.25rem;
@@ -768,9 +800,10 @@ h6 {
    }
 }
 
-.section-with-margin {
+.side-padding {
    @media only screen and (max-width: 1440px) {
-      margin: 0 0.5rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
    }
 }
 
