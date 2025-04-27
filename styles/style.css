@@ -402,6 +402,79 @@ h6 {
 }
 
 /* FAQ Section */
+.faq-section {
+   background-color: var(--section-bg);
+
+   .accordion-wrapper {
+      margin-top: 3rem;
+
+      .accordion-container {
+         padding: 1rem 0;
+
+         &:not(:last-child) {
+            border-bottom: 1px solid #CBD5E1;
+         }
+
+         .accordion {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+
+            h4 {
+               user-select: none !important;
+            }
+
+            .fa-chevron-up {
+               display: none;
+            }
+
+            .fa-chevron-down,
+            .fa-chevron-up {
+               color: #CBD5E1;
+            }
+         }
+
+         input[type='checkbox'] {
+            display: none;
+
+            &:checked {
+               ~.accordion-content {
+                  display: block;
+               }
+
+               ~.accordion .fa-chevron-down {
+                  display: none;
+               }
+
+               ~.accordion .fa-chevron-up {
+                  display: block;
+               }
+
+            }
+         }
+
+         .accordion-content {
+            display: none;
+            margin-top: 0.5rem;
+            animation: expand-content 0.5s ease;
+            -webkit-animation: expand-content 0.5s ease;
+         }
+      }
+   }
+}
+
+/* Expand animation for accordion */
+@keyframes expand-content {
+   from {
+      max-height: 0;
+   }
+
+   to {
+      max-height: 10rem;
+   }
+}
 
 /* CTA Section */
 .cta-section {
