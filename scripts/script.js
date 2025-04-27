@@ -65,6 +65,7 @@ const users = [
    }
 ];
 
+/* ------------------------- Testimonial Section ------------------------- */
 // Adding reviews to the page dynamically
 const reviewWrapper = document.getElementById("reviews-wrapper");
 users.forEach((user) => {
@@ -85,3 +86,27 @@ users.forEach((user) => {
    reviewWrapper.innerHTML += reviewContainer;
 });
 
+
+
+/* ------------------------- NAV BAR TOGGLE ------------------------- */
+const navBar = document.getElementById("mobile-nav-container");
+const navBarToggle = document.getElementById("hamburger");
+const navBarClose = document.getElementById("nav-close");
+const navElementsOnMobile = document.querySelectorAll(".links-and-btns a, .links-and-btns button");
+
+const removeActive = () => {
+   navBar.classList.remove("active");
+   document.documentElement.removeAttribute('data-lock-scroll');
+}
+
+// adding event listener to nav bar toggle button
+navBarToggle.addEventListener("click", () => {
+   navBar.classList.add("active");
+   document.documentElement.setAttribute('data-lock-scroll', 'true');
+});
+
+// removing nav bar on clicking nav links or close button
+navElementsOnMobile.forEach((element) => {
+   element.addEventListener("click", () => removeActive());
+});
+navBarClose.addEventListener("click", () => removeActive());

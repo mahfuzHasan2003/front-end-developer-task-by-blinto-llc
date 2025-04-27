@@ -5,6 +5,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Slothui</title>
+
+   <!-- CSS File linking -->
    <link rel="stylesheet" href="./styles/style.css">
 
    <!-- Font Awesome CDN -->
@@ -25,10 +27,10 @@
 
          <!-- Nav Links  -->
          <ul class="middle nav-links-container">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Achievements</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#main-features-section">Features</a></li>
+            <li><a href="#achivements-section">Achievements</a></li>
+            <li><a href="#testimonial-section">Testimonials</a></li>
+            <li><a href="#faq-section">FAQ</a></li>
          </ul>
 
          <div class="middle nav-btn">
@@ -42,19 +44,21 @@
          </label>
 
          <!-- mobile nav container -->
-         <div class="mobile-nav-container">
-            <ul class="links">
-               <li><a href="#">Features</a></li>
-               <li><a href="#">Achievements</a></li>
-               <li><a href="#">Testimonials</a></li>
-               <li><a href="#">FAQ</a></li>
-            </ul>
-            <div class="middle mobile-nav-btns">
-               <button class="btn btn-outline">Sign Up</button>
-               <button class="btn">Log In</button>
-            </div>
+         <div id="mobile-nav-container">
+            <div class="links-and-btns">
+               <ul class="links">
+                  <li><a href="#main-features-section">Features</a></li>
+                  <li><a href="#achivements-section">Achievements</a></li>
+                  <li><a href="#testimonial-section">Testimonials</a></li>
+                  <li><a href="#faq-section">FAQ</a></li>
+               </ul>
+               <div class="middle mobile-nav-btns">
+                  <button class="btn btn-outline">Sign Up</button>
+                  <button class="btn">Log In</button>
+               </div>
 
-            <i class="fa-solid fa-xmark" id="cross-icon"></i>
+            </div>
+            <i class="fa-solid fa-xmark" id="nav-close"></i>
          </div>
 
       </nav>
@@ -106,7 +110,7 @@
    </section>
 
    <!-- Main Features Section  -->
-   <section class="section">
+   <section class="section" id="main-features-section">
       <p class="heading-tag">Our Main Features</p>
 
       <h1 class="max-50rem text-center section-heading">Our Primary Features</h1>
@@ -155,7 +159,7 @@
    </section>
 
    <!-- Statistics Section -->
-   <section class="section statistics-section">
+   <section class="section statistics-section" id="achivements-section">
       <p class="heading-tag"
          style="aspect-ratio: 1/1; padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
          <img src="./assets/statistics-section/HouseSimple.png" alt="">
@@ -213,7 +217,7 @@
    </section>
 
    <!-- Testimonials Section -->
-   <section class="section testimonial-section">
+   <section class="section testimonial-section" id="testimonial-section">
       <p class="heading-tag">Testimonials</p>
       <h1 class="max-50rem text-center section-heading">What People Say</h1>
       <p class="max-50rem text-center section-description">You can visit our office anytime but please don’t stalk us or
@@ -261,7 +265,7 @@
    </section>
 
    <!-- FAQ Section -->
-   <section class="section faq-section">
+   <section class="section faq-section" id="faq-section">
       <p class="heading-tag">FAQ</p>
       <h1 class="max-50rem text-center section-heading">Frequently Asked Questions</h1>
       <p class="max-50rem text-center section-description">Fermentum iaculis eu non diam phasellus vestibulum. Volutpat

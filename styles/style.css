@@ -7,6 +7,7 @@
    --text-body: 71, 85, 105;
    --section-bg: #F8FAFC;
    font-size: 16px;
+   scroll-behavior: smooth;
 }
 
 * {
@@ -85,19 +86,48 @@ h6 {
       }
    }
 
-   .mobile-nav-container {
+   #mobile-nav-container {
       position: absolute;
       z-index: 10;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
+      background-color: rgba(255, 255, 2550, 0.5);
       padding: 5rem 0 2rem 0;
       text-align: center;
-      background-color: #fff;
       backdrop-filter: blur(20px);
       border-top: 2px solid #ccc;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateY(110%);
+      -webkit-transform: translateY(110%);
+      -moz-transform: translateY(110%);
+      -ms-transform: translateY(110%);
+      -o-transform: translateY(110%);
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
 
-      #cross-icon {
+      &.active {
+         transform: translateY(0);
+         opacity: 1;
+         -webkit-transform: translateY(0);
+         -moz-transform: translateY(0);
+         -ms-transform: translateY(0);
+         -o-transform: translateY(0);
+      }
+
+      .links-and-btns {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -webkit-transform: translate(-50%, -50%);
+         -moz-transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+      }
+
+      #nav-close {
          position: absolute;
          top: -2.5rem;
          font-size: 4rem;
@@ -124,6 +154,7 @@ h6 {
       }
    }
 }
+
 
 
 /* hero section */
@@ -578,6 +609,9 @@ h6 {
          img {
             max-width: 100%;
             position: relative;
+            filter: drop-shadow(0px 19.71px 43.79px #1E293B1A);
+            -webkit-filter: drop-shadow(0px 19.71px 43.79px #1E293B1A);
+            -webkit-filter: drop-shadow(0px 19.71px 43.79px #1E293B1A);
 
             @media only screen and (max-width: 425px) {
                max-width: 50%;
